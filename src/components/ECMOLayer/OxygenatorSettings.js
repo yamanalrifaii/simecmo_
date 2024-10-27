@@ -19,15 +19,15 @@ function OxygenatorSettings() {
     const decrementResistance = () => handleResistanceChange(oxygenatorResistance - 0.5);
 
     return (
-        <div className="bg-dark-grey p-2 rounded-lg shadow-md w-48">
-            <h3 className="text-white text-sm font-bold mb-2 text-center">Oxygenator Settings</h3>
+        <div className="bg-white p-2 rounded-lg shadow-md w-48">
+            <h3 className="text-dark-grey text-sm font-bold mb-2 text-center">Oxygenator Settings</h3>
             <div className="mb-4">
                 <div className="flex justify-between items-center mb-1">
-                    <span className="text-white text-xs">Diffusion:</span>
-                    <span className="text-white text-xs font-bold">{diffusion.toFixed(5)}</span>
+                    <span className="text-dark-grey text-xs">Diffusion:</span>
+                    <span className="text-dark-grey text-xs">{diffusion.toFixed(5)}</span>
                 </div>
                 <div className="flex items-center">
-                    <button onClick={decrementDiffusion} className="text-white text-xs px-2 py-1 bg-gray-700 rounded">-</button>
+                    <button onClick={decrementDiffusion} className="text-red text-xs px-2 py-1 rounded">-</button>
                     <Slider 
                         value={diffusion} 
                         onChange={(e) => handleDiffusionChange(e.value)} 
@@ -36,16 +36,16 @@ function OxygenatorSettings() {
                         step={0.00001}
                         className="w-full mx-2"
                     />
-                    <button onClick={incrementDiffusion} className="text-white text-xs px-2 py-1 bg-gray-700 rounded">+</button>
+                    <button onClick={incrementDiffusion} className="text-red text-xs px-2 py-1 rounded">+</button>
                 </div>
             </div>
             <div>
                 <div className="flex justify-between items-center mb-1">
-                    <span className="text-white text-xs">Oxygenator Resistance:</span>
-                    <span className="text-white text-xs font-bold">{oxygenatorResistance.toFixed(1)}</span>
+                    <span className="text-dark-grey text-xs">Oxygenator Resistance:</span>
+                    <span className="text-dark-grey text-xs">{oxygenatorResistance.toFixed(1)}</span>
                 </div>
                 <div className="flex items-center">
-                    <button onClick={decrementResistance} className="text-white text-xs px-2 py-1 bg-gray-700 rounded">-</button>
+                    <button onClick={decrementResistance} className="text-red text-xs px-2 py-1 rounded">-</button>
                     <Slider 
                         value={oxygenatorResistance} 
                         onChange={(e) => handleResistanceChange(e.value)} 
@@ -54,7 +54,7 @@ function OxygenatorSettings() {
                         step={0.5}
                         className="w-full mx-2"
                     />
-                    <button onClick={incrementResistance} className="text-white text-xs px-2 py-1 bg-gray-700 rounded">+</button>
+                    <button onClick={incrementResistance} className="text-red text-xs px-2 py-1 rounded">+</button>
                 </div>
             </div>
         </div>

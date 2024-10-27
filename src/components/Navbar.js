@@ -6,17 +6,15 @@ const NavBar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   let timer = null;
 
-  // Open the dropdown on hover
   const handleMouseEnter = () => {
     if (timer) clearTimeout(timer);
     setIsDropdownOpen(true);
   };
 
-  // Close the dropdown with a small delay to allow user to move the mouse
   const handleMouseLeave = () => {
     timer = setTimeout(() => {
       setIsDropdownOpen(false);
-    }, 200); // Adjust the delay to a small time period, e.g., 200ms
+    }, 200);
   };
 
   return (
@@ -29,7 +27,7 @@ const NavBar = () => {
             </div>
             <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
               <Link to="/" className="border-red text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                Dashboard
+                Home
               </Link>
 
               <div
@@ -69,6 +67,7 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
 
 // import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';

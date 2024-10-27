@@ -1,22 +1,20 @@
-import React from 'react';
-import VA_ECMO from '../../images/VA_ECMO.svg';
+import React, { useState } from 'react';
+import vaECMO from '../../images/vaECMO.svg';
+import ABG_Circuit from '../../images/ABG_Circuit.svg'; // You'll need to create this SVG
 import PumpSettings from './PumpSettings';
 import Blender1 from './Blender1';
 import OxygenatorSettings from './OxygenatorSettings';
 import OutputParameters from './OutputParameters';
 
-function ECMOLayer({ values, setValues }) {
-  const { LV_Contractility, RV_Contractility, HR, Lactate, O2Sat, FdO2, Sweep } = values;
+function ECMOLayer({ values }) {
+  const [visualizationMode, setVisualizationMode] = useState('cannulations');
+  const { LV_Contractility, RV_Contractility, HR, Lactate, O2Sat } = values;
 
-  // Calculate dynamic cardiac output based on contractility and HR
+  // Simulate cardiac output drop due to reduced contractility
   const CO = (LV_Contractility + RV_Contractility) * HR / 100;
   const updatedO2Sat = Math.max(0, O2Sat - (2 * Lactate));
 
-  // Update values dynamically when user changes settings
-  const updateValues = (newValues) => {
-    setValues(prev => ({ ...prev, ...newValues }));
-  };
-
+  // Define hemodynamics, blood gases, and pressures data
   const hemodynamics = {
     AoP: '90',
     PAP: '15',
@@ -46,46 +44,95 @@ function ECMOLayer({ values, setValues }) {
   };
 
   return (
-    <div className="flex justify-between items-start">
-      <div className="flex-grow flex justify-center relative">
-        <div className="relative">
-          <img 
-            src={VA_ECMO} 
-            width="700" 
-            height="300" 
-            alt="ECMO diagram" 
-            className="mx-4 relative"
-            style={{ top: '160px', left: '45px' }} 
-          />
-          {/* Link OxygenatorSettings to update values */}
-          <div className="absolute" style={{ top: '45%', left: '20%', transform: 'translate(-50%, -50%)' }}>
-            <OxygenatorSettings values={values} setValues={setValues} />
-          </div>
-          {/* Link Blender1 to update values */}
-          <div className="absolute" style={{ top: '95%', right: '105%', transform: 'translate(-50%, -50%)' }}>
-            <Blender1 values={values} setValues={setValues} />
-          </div>
-          <div className="absolute" style={{ top: '35%', left: '66%', transform: 'translate(-50%, -50%)' }}>
-            <PumpSettings values={values} setValues={setValues} />
-          </div>
+    <div className="flex flex-col h-full">
+      <div className="mb-4 flex">
+        <div className="inline-flex rounded-md shadow-sm" role="group">
+          <button
+            type="button"
+            className={`px-4 py-2 text-sm font-medium rounded-l-lg ${
+              visualizationMode === 'circulations'
+                ? 'bg-red text-white hover:bg-red'
+                : 'bg-blue-700 text-dark-grey'
+            }`}
+            onClick={() => setVisualizationMode('circulations')}
+          >
+            Circulations
+          </button>
+          <button
+            type="button"
+            className={`px-4 py-2 text-sm font-medium rounded-r-lg ${
+              visualizationMode === 'cannulations'
+                ? 'bg-red text-white'
+                : 'bg-blue-700 text-dark-grey hover:bg-gray-100'
+            }`}
+            onClick={() => setVisualizationMode('cannulations')}
+          >
+            Cannulations
+          </button>
         </div>
       </div>
-      
-      {/* Pass updated values to OutputParameters */}
-      <div className="flex-shrink-0">
-        <OutputParameters 
-          hemodynamics={hemodynamics} 
-          bloodGases={bloodGases} 
-          pressures={pressures} 
-        />
+
+      <div className="flex justify-between items-start flex-grow">
+        <div className="flex-grow flex justify-center relative">
+          <div className="relative">
+
+            {visualizationMode === 'cannulations' ? (
+              <>
+                <img 
+                  src={vaECMO} 
+                  width="700" 
+                  height="300" 
+                  alt="ECMO diagram" 
+                  className="mx-4 relative"
+                  style={{ top: '160px', left: '45px' }} 
+                />
+                <div className="absolute" style={{ top: '45%', left: '20%', transform: 'translate(-50%, -50%)' }}>
+                  <OxygenatorSettings />
+                </div>
+                <div className="absolute" style={{ top: '95%', right: '105%', transform: 'translate(-50%, -50%)' }}>
+                  <Blender1 />
+                </div>
+                <div className="absolute" style={{ top: '35%', left: '66%', transform: 'translate(-50%, -50%)' }}>
+                  <PumpSettings />
+                </div>
+              </>
+            ) : (
+            <>
+              <img 
+                src={ABG_Circuit} 
+                width="700" 
+                height="200" 
+                alt="Circulations diagram" 
+                className="mx-4 relative"
+                style={{ left: '45px', bottom: '30px'}} 
+              />
+              <div className="absolute" style={{ top: '15%', left: '42%', transform: 'translate(-50%, -50%)' }}>
+              <OxygenatorSettings />
+                </div>
+                <div className="absolute" style={{ top: '25%', right: '110%', transform: 'translate(-50%, -50%)' }}>
+              <Blender1 />
+                </div>
+                <div className="absolute" style={{ top: '88%', left: '56%', transform: 'translate(-50%, -50%)' }}>
+              <PumpSettings />
+                </div>
+            </>
+            )}
+          </div>
+        </div>
+        
+        <div className="flex-shrink-0">
+          <OutputParameters 
+            hemodynamics={hemodynamics} 
+            bloodGases={bloodGases} 
+            pressures={pressures} 
+          />
+        </div>
       </div>
     </div>
   );
 }
 
 export default ECMOLayer;
-
-
 
 // import React from 'react';
 // import VA_ECMO from '../../images/VA_ECMO.svg';

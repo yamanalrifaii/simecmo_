@@ -4,6 +4,7 @@ import Scenario from './components/Scenario';
 import Dashboard from './components/Dashboard';
 import NavBar from './components/Navbar';
 import { scenarios } from '../src/components/Scenarios';
+import Home from './components/Home';
 
 function App() {
   const [values, setValues] = useState({
@@ -31,6 +32,7 @@ function App() {
       <div className="bg-dark-default text-text-primary font-poppins min-h-screen w-full bg-gray-100">
         <NavBar />
         <Routes>
+        <Route path="/" element={<Home />} />
           <Route path="/" element={<Dashboard values={values} setValues={setValues} />} />
           <Route 
             path="/scenarios/:scenarioId" 

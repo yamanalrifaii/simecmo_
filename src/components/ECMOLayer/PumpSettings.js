@@ -32,10 +32,10 @@ const PumpSettings = () => {
       <style>{`
         .custom-knob .p-knob-value {
           stroke: #991b1b !important;
-          font-size: 10px !important;
+          font-size: 14px !important;
         }
         .custom-knob .p-knob-text {
-          font-size: 12px !important;
+          font-size: 16px !important;
         }
         .lcd-display {
           background-color: #e0e0e0;
@@ -46,8 +46,7 @@ const PumpSettings = () => {
           text-align: center;
         }
         .control-button {
-          background-color: #991b1b;
-          color: white;
+          color: black;
           border: none;
           padding: 2px 4px;
           font-size: 12px;
@@ -63,7 +62,7 @@ const PumpSettings = () => {
           max={6700}
           valueTemplate={`${(flow / 1000).toFixed(1)}K\nrpm`}
           className="custom-knob"
-          size={60}
+          size={80}
           step={100}
           valueColor="#991b1b"
           rangeColor="#e5e7eb"
@@ -85,76 +84,3 @@ const PumpSettings = () => {
 };
 
 export default PumpSettings;
-
-// import React, { useState } from 'react';
-// import { Knob } from 'primereact/knob';
-// import { InputText } from 'primereact/inputtext';
-// import 'primereact/resources/themes/saga-blue/theme.css';
-// import 'primereact/resources/primereact.min.css';
-// import 'primeicons/primeicons.css';
-
-// const PumpSettings = ({ values, setValues }) => {
-//   const { flow } = values;
-
-//   const handleChange = (newFlow) => {
-//     setValues(prev => ({ ...prev, flow: Math.min(6700, Math.max(600, newFlow)) }));
-//   };
-
-//   return (
-//     <div className="bg-white p-1 rounded-lg shadow-md w-32">
-//       <style>{`
-//         .custom-knob .p-knob-value {
-//           stroke: #991b1b !important;
-//           font-size: 12px !important;
-//         }
-//         .custom-knob .p-knob-text {
-//           font-size: 16px !important;
-//         }
-//         .lcd-display {
-//           background-color: #e0e0e0;
-//           border: 1px solid #999;
-//           padding: 2px;
-//           font-family: 'Courier New', monospace;
-//           font-size: 12px;
-//           text-align: center;
-//         }
-//         .control-button {
-//           color: dark-grey;
-//           border: none;
-//           padding: 4px 6px;
-//           font-size: 14px;
-//           cursor: pointer;
-//         }
-//       `}</style>
-//       <h2 className="text-m font-semibold text-center mb-1">Flow</h2>
-//       <div className="mb-2 flex flex-col items-center">
-//         <Knob
-//           value={flow}
-//           onChange={(e) => handleChange(e.value)}
-//           min={600}
-//           max={6700}
-//           valueTemplate={`${(flow / 1000).toFixed(1)}K\nrpm`}
-//           className="custom-knob"
-//           size={90}
-//           step={100}
-//           valueColor="#991b1b"
-//           rangeColor="#e5e7eb"
-//         />
-//       </div>
-//       <div className="flex items-center justify-center space-x-1 mt-2">
-//         <button className="control-button" onClick={handleDecrement}>-</button>
-//         <div className="lcd-display w-16">
-//           <InputText
-//             value={flow.toFixed(1)}
-//             onChange={handleInputChange}
-//             className="w-full text-right bg-transparent border-none text-s p-0"
-//           />
-//         </div>
-//         <button className="control-button" onClick={handleIncrement}>+</button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PumpSettings;
-
