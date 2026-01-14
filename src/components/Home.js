@@ -6,33 +6,34 @@ import { Link } from 'react-router-dom';
 const Home = () => {
   const scenarios = [
     {
-      id: 'intro',
-      title: 'What is ECMO?',
-      description: 'Get introduced to ECMO, its components and how it works.',
-      image: '/api/placeholder/600/400',
-      color: 'from-red-500 to-red-700'
-    },
-    {
-      id: 'acute-heart-failure',
-      title: 'Acute Heart Failure',
-      description: 'Simulate and manage a case of acute heart failure using ECMO.',
-      image: '/api/placeholder/600/400',
-      color: 'from-red-200 to-pink-200'
-    },
-    {
-      id: 'chronic-heart-failure',
-      title: 'Chronic Heart Failure',
-      description: 'Explore long-term ECMO management in chronic heart failure patients.',
-      image: '/api/placeholder/600/400',
-      color: 'from-purple-200 to-indigo-200'
-    },
-    {
-      id: 'cardiogenic-shock',
-      title: 'Cardiogenic Shock',
-      description: 'Handle a critical case of cardiogenic shock with ECMO support.',
-      image: '/api/placeholder/600/400',
-      color: 'from-green-200 to-teal-200'
-    }
+          id: 'Hemodynamics',
+          title: 'Hemodynamics Parameters', 
+          description: 'Monitor and adjust critical hemodynamic parameters, such as venous resistance, pulmonary vascular resistance and systemic vascular resistance, to manage acute heart failure with ECMO support.',
+          image: '/api/placeholder/600/400',
+          color: 'from-green-200 to-teal-200'
+        },
+        {
+          id: 'Oxygenation',
+          title: 'Oxygenation Parameters',
+          description: 'Assess and optimize oxygenation parameters, including hemoglobin and shunt fraction, to support long-term ECMO management in chronic respiratory failure patients.',
+          image: '/api/placeholder/600/400',
+          color: 'from-purple-200 to-indigo-200'
+        },
+        {
+          id: 'ecmoParameters',
+          title: 'ECMO Parameters',
+          description: 'Configure ECMO device parameters such as pump speed, oxygenator resistance, diffusion and sweep to stabilize patients in critical cardiogenic shock scenarios.',
+          image: '/api/placeholder/600/400',
+          color: 'from-purple-200 to-indigo-200'
+        }, 
+        {
+          id: 'Cardiovascular',
+          title: 'Cardiovascular Parameters',
+          description: 'Manage a variety of cardiovascular parameters, including heart rate, RV Contractility, and LV Contractility, to maintain adequate circulation.',
+          image: '/api/placeholder/600/400',
+          color: 'from-green-200 to-teal-200'
+        }
+    
   ];
 
   return (
@@ -56,7 +57,7 @@ const Home = () => {
             <div key={scenario.id} className="transform transition duration-500 hover:scale-105">
               <Card className="bg-white border border-gray-200 overflow-hidden shadow-lg hover:shadow-2xl">
                 <div className="relative">
-                  <img src={scenario.image} alt={scenario.title} className="w-full h-48 object-cover" />
+                  <img className="w-full h-48 object-cover" />
                   <div className={`absolute inset-0 bg-gradient-to-br ${scenario.color} opacity-75`}></div>
                   <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-gray-800 drop-shadow-md">{scenario.title}</h3>
                 </div>

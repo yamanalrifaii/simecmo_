@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Scenario from './components/Scenario';
 import Dashboard from './components/Dashboard';
 import NavBar from './components/Navbar';
-import { scenarios } from '../src/components/Scenarios';
+import ScenarioManager from '../src/components/pages/ScenarioManager';
 import Home from './components/Home';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
           <Route path="/" element={<Dashboard values={values} setValues={setValues} />} />
           <Route 
             path="/scenarios/:scenarioId" 
-            element={<Scenario scenarios={scenarios} values={values} setValues={setValues} />} 
+            element={<ScenarioManager values={values} setValues={setValues} />} 
           />
         </Routes>
       </div>

@@ -1,0 +1,180 @@
+2024-11-12 17:03:06,643 [INFO] - Initializing ECMO predictor...
+2024-11-12 17:03:06,646 [INFO] - ECMO predictor initialized successfully
+2024-11-12 17:03:06,722 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-12 17:03:06,723 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-12 17:10:03,153 [INFO] - Initializing ECMO predictor...
+2024-11-12 17:10:03,156 [INFO] - ECMO predictor initialized successfully
+2024-11-12 17:10:03,186 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-12 17:10:03,186 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-12 17:43:10,710 [INFO] - Initializing ECMO predictor...
+2024-11-12 17:43:10,713 [INFO] - ECMO predictor initialized successfully
+2024-11-12 17:43:10,760 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-12 17:43:10,762 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-12 18:06:22,339 [INFO] - Initializing ECMO predictor...
+2024-11-12 18:06:22,341 [INFO] - ECMO predictor initialized successfully
+2024-11-12 18:06:22,358 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-12 18:06:22,360 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-12 19:42:04,221 [INFO] - Initializing ECMO predictor...
+2024-11-12 19:42:04,223 [INFO] - ECMO predictor initialized successfully
+2024-11-12 19:42:04,248 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-12 19:42:04,248 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-12 19:44:35,937 [INFO] - Initializing ECMO predictor...
+2024-11-12 19:44:35,940 [INFO] - ECMO predictor initialized successfully
+2024-11-12 19:44:35,976 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-12 19:44:35,977 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-12 19:44:35,997 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-12 19:44:59,323 [INFO] - Initializing ECMO predictor...
+2024-11-12 19:44:59,324 [INFO] - ECMO predictor initialized successfully
+2024-11-12 19:44:59,336 [WARNING] -  * Debugger is active!
+2024-11-12 19:44:59,342 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-12 20:35:56,422 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-12 20:35:56,471 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:16:28,982 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:16:28,987 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:16:29,070 [INFO] - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-20 15:16:29,070 [INFO] - [33mPress CTRL+C to quit[0m
+2024-11-20 15:16:29,096 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:16:31,488 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:16:31,492 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:16:31,503 [WARNING] -  * Debugger is active!
+2024-11-20 15:16:31,511 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:20:20,467 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 15:20:21,879 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:20:24,984 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:20:24,986 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:20:25,003 [WARNING] -  * Debugger is active!
+2024-11-20 15:20:25,012 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:23:21,941 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\flask\\typing.py', reloading
+2024-11-20 15:23:21,968 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2024-11-20 15:23:24,037 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:23:27,754 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:23:27,758 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:23:27,776 [WARNING] -  * Debugger is active!
+2024-11-20 15:23:27,784 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:23:38,622 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\flask\\globals.py', reloading
+2024-11-20 15:23:38,676 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\flask\\wrappers.py', reloading
+2024-11-20 15:23:38,705 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2024-11-20 15:23:38,735 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2024-11-20 15:23:38,772 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2024-11-20 15:23:38,826 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\werkzeug\\utils.py', reloading
+2024-11-20 15:23:39,077 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:23:40,945 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:23:40,947 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:23:40,954 [WARNING] -  * Debugger is active!
+2024-11-20 15:23:40,958 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:24:01,921 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 15:24:01,924 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 15:24:02,284 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:24:04,096 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:24:04,099 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:24:04,119 [WARNING] -  * Debugger is active!
+2024-11-20 15:24:04,124 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:24:47,020 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 15:24:47,024 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 15:24:47,704 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:24:50,729 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:24:50,732 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:24:50,752 [WARNING] -  * Debugger is active!
+2024-11-20 15:24:50,758 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:26:16,877 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:26:16,880 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:26:16,881 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:26:17,463 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:26:20,098 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:26:20,101 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:26:20,113 [WARNING] -  * Debugger is active!
+2024-11-20 15:26:20,120 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:26:58,330 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:26:58,336 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:26:59,629 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:27:01,684 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:27:01,686 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:27:01,700 [WARNING] -  * Debugger is active!
+2024-11-20 15:27:01,703 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:27:57,895 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:27:58,620 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:28:01,830 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:28:01,833 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:28:01,855 [WARNING] -  * Debugger is active!
+2024-11-20 15:28:01,870 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 15:28:39,706 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:28:39,712 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\models\\predictor.py', reloading
+2024-11-20 15:28:40,509 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 15:28:43,282 [INFO] - Initializing ECMO predictor...
+2024-11-20 15:28:43,286 [INFO] - ECMO predictor initialized successfully
+2024-11-20 15:28:43,299 [WARNING] -  * Debugger is active!
+2024-11-20 15:28:43,303 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:12:34,591 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:12:36,213 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:12:46,259 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:12:46,262 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:12:46,283 [WARNING] -  * Debugger is active!
+2024-11-20 18:12:46,294 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:16:49,819 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:16:49,829 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:16:51,258 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:16:55,349 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:16:55,353 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:16:55,370 [WARNING] -  * Debugger is active!
+2024-11-20 18:16:55,380 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:17:55,121 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:17:55,139 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:17:56,437 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:18:00,899 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:18:00,902 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:18:00,918 [WARNING] -  * Debugger is active!
+2024-11-20 18:18:00,926 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:18:19,529 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:18:19,531 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:18:20,296 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:18:22,636 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:18:22,638 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:18:22,652 [WARNING] -  * Debugger is active!
+2024-11-20 18:18:22,656 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:19:18,880 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\datetime.py', reloading
+2024-11-20 18:19:19,004 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\_pydatetime.py', reloading
+2024-11-20 18:19:20,086 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:19:22,422 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:19:22,423 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:19:22,433 [WARNING] -  * Debugger is active!
+2024-11-20 18:19:22,438 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:19:24,676 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:19:24,677 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:19:25,709 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:19:27,521 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:19:27,523 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:19:27,533 [WARNING] -  * Debugger is active!
+2024-11-20 18:19:27,535 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:19:28,417 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:19:28,778 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:19:30,748 [INFO] - Server starting up...
+2024-11-20 18:19:30,751 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:19:30,752 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:19:30,759 [WARNING] -  * Debugger is active!
+2024-11-20 18:19:30,763 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:21:57,191 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\flask\\blueprints.py', reloading
+2024-11-20 18:21:57,230 [INFO] -  * Detected change in 'C:\\Users\\asus\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\flask\\sansio\\blueprints.py', reloading
+2024-11-20 18:21:57,774 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:22:00,261 [INFO] - Server starting up...
+2024-11-20 18:22:00,263 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:22:00,265 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:22:00,278 [WARNING] -  * Debugger is active!
+2024-11-20 18:22:00,288 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:22:02,858 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:22:02,859 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:22:03,541 [INFO] -  * Restarting with watchdog (windowsapi)
+2024-11-20 18:22:05,325 [INFO] - Server starting up...
+2024-11-20 18:22:05,327 [INFO] - Initializing ECMO predictor...
+2024-11-20 18:22:05,329 [INFO] - ECMO predictor initialized successfully
+2024-11-20 18:22:05,339 [WARNING] -  * Debugger is active!
+2024-11-20 18:22:05,342 [INFO] -  * Debugger PIN: 144-117-225
+2024-11-20 18:23:10,587 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:23:10,594 [INFO] -  * Detected change in 'C:\\Users\\asus\\OneDrive - University of Sharjah\\Desktop\\simECMO\\simECMO\\backend\\app.py', reloading
+2024-11-20 18:23:12,120 [INFO] -  * Restarting with watchdog (windowsapi)

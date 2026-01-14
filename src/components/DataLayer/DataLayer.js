@@ -1,98 +1,90 @@
-import React, { useState } from "react";
-import { InputNumber } from "primereact/inputnumber";
-import 'primereact/resources/themes/saga-blue/theme.css';
-import 'primereact/resources/primereact.min.css';
-import 'primeicons/primeicons.css';
+// DataLayer.js
+import React, { useState, useEffect } from "react";
+import { Slider } from 'primereact/slider';
 import '../../css/DataLayer.css';
 
-function DataLayer() {
-    const [values, setValues] = useState({
-        sweep: 5,
-        FDO2: 0.21,
-        shunt_fraction: 20,
-        DLCO: 20,
-        FIO2: 0.21,
-        Resp_Rate: 12,
-        TV: 500,
-        MVO2: 250,
-        Hb: 12,
-        Lactate: 1,
-        HCO3: 24,
-        LV_Contractility: 1,
-        RV_Contractility: 1,
-        SVR: 20,
-        PVR: 1,
-        Volume: 5000,
-        HR: 70
+function DataLayer({ scenarioType, onParameterChange }) {
+  const [values, setValues] = useState({});
+  const [parameters, setParameters] = useState([]);
+
+  useEffect(() => {
+    // Configure parameters based on the scenarioType
+    const scenarioParams = {
+      oxygenation: [
+        { key: 'Hb', min: 5, max: 20, step: 0.5, unit: 'g/dL' },
+        { key: 'MVO2', min: 100, max: 1500, step: 5, unit: 'mL/min' },
+        { key: 'DLCO', min: 1, max: 100, step: 1, unit: 'mL/min/mmHg' },
+        { key: 'shunt_fraction', min: 0, max: 100, step: 1, unit: '%' },
+        { key: 'FDO2', min: 0.21, max: 1.00, step: 0.05, unit: '' }
+      ],
+      hemodynamics: [
+        { key: 'arterial_r', min: 0, max: 60, step: 0.1, unit: 'mmHg·s/mL' },
+        { key: 'venous_r', min: 0, max: 600, step: 0.1, unit: 'mmHg·s/mL' },
+        { key: 'PVR', min: 0, max: 80, step: 0.10, unit: 'woods units' },
+        { key: 'SVR', min: 1, max: 100, step: 0.10, unit: 'woods units' }
+      ], 
+      cardiovascular: [
+        { key: 'cv_heartrate_value', min: 40, max: 210, step: 1, unit: 'bpm' },
+        { key: 'cv_volume_value', min: 200, max: 5000, step: 5, unit: 'mL' },
+        { key: 'cv_eeslv_value', min: 0.2, max: 10.0, step: 0.1, unit: 'mmHg/mL' },
+        { key: 'cv_eesrv_value', min: 0.5, max: 5.0, step: 0.1, unit: 'mmHg/mL' }
+    ], 
+      ecmoParameters: [
+        { key: 'rpm', min: 0.6, max: 6.7, step: 0.1, unit: 'RPM' },
+        { key: 'oxygenator_resistance', min: 0, max: 200.0, step: 0.1, unit: 'mmHg/L/min' },
+        { key: 'sweep_flow', min: 0, max: 10, step: 0.5, unit: 'L/min' },
+        { key: 'diffusion', min: 0.0001, max: 0.01, step: 0.1, unit: 'L/min' }
+      ]
+    };
+
+    setParameters(scenarioParams[scenarioType] || []);
+    setValues(prevValues => {
+      const updatedValues = {};
+      (scenarioParams[scenarioType] || []).forEach(param => {
+        updatedValues[param.key] = prevValues[param.key] || param.min;
+      });
+      return updatedValues;
     });
+  }, [scenarioType]);
 
-    const parameterConfig = {
-        sweep: { min: 0, max: 10, step: 0.5 },
-        FDO2: { min: 0.05, max: 1.00, step: 0.05 },
-        shunt_fraction: { min: 0, max: 100, step: 1 },
-        DLCO: { min: 1, max: 100, step: 1 },
-        FIO2: { min: 0.05, max: 1, step: 0.01 },
-        Resp_Rate: { min: 0, max: 30, step: 1 },
-        TV: { min: 0, max: 1000, step: 10 },
-        MVO2: { min: 100, max: 1500, step: 5 },
-        Hb: { min: 5, max: 20, step: 0.5 },
-        Lactate: { min: 0, max: 15, step: 0.5 },
-        HCO3: { min: 10, max: 40, step: 0.5 },
-        LV_Contractility: { min: 0.20, max: 10.00, step: 0.1 },
-        RV_Contractility: { min: 0.04, max: 5.00, step: 0.1 },
-        SVR: { min: 0, max: 100, step: 0.10 },
-        PVR: { min: 0, max: 80, step: 0.10 },
-        Volume: { min: 200, max: 5000, step: 20 },
-        HR: { min: 40, max: 210, step: 1 }
-    };
+  const handleChange = (key, newValue) => {
+    setValues(prev => ({ ...prev, [key]: newValue }));
+    onParameterChange(key, newValue);
+  };
 
-    const handleChange = (key, newValue) => {
-        setValues(prev => ({ ...prev, [key]: newValue }));
-    };
-
-    const renderParameter = (key, value) => (
-        <div key={key} className="flex justify-between items-center p-2 border-b border-gray-200">
-            <span className="text-sm font-medium text-gray-700 mr-2">
-                {key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
-            </span>
-            <InputNumber
-                value={value}
-                onValueChange={(e) => handleChange(key, e.value)}
-                mode="decimal"
-                showButtons
-                buttonLayout="horizontal"
-                decrementButtonClassName="p-button-danger"
-                incrementButtonClassName="p-button-danger"
-                incrementButtonContent="+"
-                decrementButtonContent="-"
-                min={parameterConfig[key].min}
-                max={parameterConfig[key].max}
-                step={parameterConfig[key].step}
-                className="custom-inputnumber"
-            />
+  return (
+    <div className="data-layer-container">
+      <div className="section-container">
+        <div className="section-header">
+          <h3>Patient Parameters</h3>
         </div>
-    );
-
-    const renderParameterGroup = (title, parameters) => (
-        <div className="mb-4 bg-gray-700 rounded overflow-hidden">
-            <h3 className="text-white text-sm font-semibold p-2">{title}</h3>
-            <div className="bg-white max-h-60 overflow-y-auto">
-                {parameters.map(param => renderParameter(param, values[param]))}
+        <div className="parameters-group">
+          {parameters.map(param => (
+            <div key={param.key} className="parameter-row">
+              <div className="parameter-header">
+                <span className="parameter-label">
+                  {param.key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}
+                </span>
+                <span className="parameter-value">
+                  {values[param.key]} {param.unit}
+                </span>
+              </div>
+              <div className="slider-container">
+                <Slider
+                  value={values[param.key]}
+                  onChange={(e) => handleChange(param.key, e.value)}
+                  min={param.min}
+                  max={param.max}
+                  step={param.step}
+                  className="modern-slider"
+                />
+              </div>
             </div>
+          ))}
         </div>
-    );
-
-    const lungsParameters = ['sweep', 'FDO2', 'shunt_fraction', 'DLCO', 'FIO2', 'Resp_Rate', 'TV'];
-    const patientParameters = ['MVO2', 'Hb', 'Lactate', 'HCO3', 'LV_Contractility', 'RV_Contractility', 'SVR', 'PVR', 'Volume', 'HR'];
-
-    return (
-        <div className="flex flex-col space-y-4 p-4 rounded-lg overflow-hidden">
-            <div className="overflow-y-auto flex-grow">
-                {renderParameterGroup("Lungs Parameters", lungsParameters)}
-                {renderParameterGroup("Patient Parameters", patientParameters)}
-            </div>
-        </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default DataLayer;

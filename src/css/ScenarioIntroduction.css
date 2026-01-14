@@ -1,0 +1,22 @@
+/* .custom-card.p-card {
+    background-color: #374151;
+    color: #f4f4f5;
+}
+
+.custom-card .p-card-content {
+    padding: 0;
+    background-color: #374151;
+}
+
+.custom-card .p-card-body {
+    background-color: #374151;
+}
+
+/* Override any white backgrounds from PrimeReact */
+/* .p-card {
+    background-color: #374151 !important;
+}
+
+.p-divider.p-divider-horizontal:before {
+    border-top: 1px solid rgba(46, 124, 165, 0.2) !important;
+} */ 

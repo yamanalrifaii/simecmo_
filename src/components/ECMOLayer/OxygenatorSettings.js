@@ -1,16 +1,48 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import { Slider } from 'primereact/slider';
 
-function OxygenatorSettings() {
-    const [diffusion, setDiffusion] = useState(0.00505);
-    const [oxygenatorResistance, setOxygenatorResistance] = useState(100);
+function OxygenatorSettings({
+    diffusion = 0.00100,
+    oxygenatorResistance = 100.0,
+    onDiffusionChange = () => {},
+    onResistanceChange = () => {},
+    disabled = false
+}) {
+    // Move useMemo hooks to the top level, before any conditional logic
+    const diffusionDisplay = useMemo(() => {
+        try {
+            return diffusion.toFixed(5);
+        } catch (e) {
+            console.error('Error formatting diffusion:', e);
+            return '0.00100';
+        }
+    }, [diffusion]);
+
+    const resistanceDisplay = useMemo(() => {
+        try {
+            return oxygenatorResistance.toFixed(1);
+        } catch (e) {
+            console.error('Error formatting resistance:', e);
+            return '100.0';
+        }
+    }, [oxygenatorResistance]);
+
+    // Validation check after the hooks
+    if (diffusion === undefined || oxygenatorResistance === undefined) {
+        console.warn('OxygenatorSettings received undefined values:', { diffusion, oxygenatorResistance });
+        return null;
+    }
 
     const handleDiffusionChange = (newValue) => {
-        setDiffusion(Math.min(0.01000, Math.max(0.00010, parseFloat(newValue.toFixed(5)))));
+        if (disabled) return;
+        const value = Math.min(0.01000, Math.max(0.00010, parseFloat(newValue.toFixed(5))));
+        onDiffusionChange(value);
     };
 
     const handleResistanceChange = (newValue) => {
-        setOxygenatorResistance(Math.min(200, Math.max(0, parseFloat(newValue.toFixed(1)))));
+        if (disabled) return;
+        const value = Math.min(200, Math.max(0, parseFloat(newValue.toFixed(1))));
+        onResistanceChange(value);
     };
 
     const incrementDiffusion = () => handleDiffusionChange(diffusion + 0.00001);
@@ -19,15 +51,19 @@ function OxygenatorSettings() {
     const decrementResistance = () => handleResistanceChange(oxygenatorResistance - 0.5);
 
     return (
-        <div className="bg-white p-2 rounded-lg shadow-md w-48">
+        <div className={`bg-white p-2 rounded-lg shadow-md w-48 ${disabled ? 'opacity-70' : ''}`}>
             <h3 className="text-dark-grey text-sm font-bold mb-2 text-center">Oxygenator Settings</h3>
             <div className="mb-4">
                 <div className="flex justify-between items-center mb-1">
                     <span className="text-dark-grey text-xs">Diffusion:</span>
-                    <span className="text-dark-grey text-xs">{diffusion.toFixed(5)}</span>
+                    <span className="text-dark-grey text-xs">{diffusionDisplay}</span>
                 </div>
                 <div className="flex items-center">
-                    <button onClick={decrementDiffusion} className="text-red text-xs px-2 py-1 rounded">-</button>
+                    <button 
+                        onClick={decrementDiffusion} 
+                        className={`text-red text-xs px-2 py-1 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        disabled={disabled}
+                    >-</button>
                     <Slider 
                         value={diffusion} 
                         onChange={(e) => handleDiffusionChange(e.value)} 
@@ -35,17 +71,26 @@ function OxygenatorSettings() {
                         max={0.01000}
                         step={0.00001}
                         className="w-full mx-2"
+                        disabled={disabled}
                     />
-                    <button onClick={incrementDiffusion} className="text-red text-xs px-2 py-1 rounded">+</button>
+                    <button 
+                        onClick={incrementDiffusion} 
+                        className={`text-red text-xs px-2 py-1 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        disabled={disabled}
+                    >+</button>
                 </div>
             </div>
             <div>
                 <div className="flex justify-between items-center mb-1">
                     <span className="text-dark-grey text-xs">Oxygenator Resistance:</span>
-                    <span className="text-dark-grey text-xs">{oxygenatorResistance.toFixed(1)}</span>
+                    <span className="text-dark-grey text-xs">{resistanceDisplay}</span>
                 </div>
                 <div className="flex items-center">
-                    <button onClick={decrementResistance} className="text-red text-xs px-2 py-1 rounded">-</button>
+                    <button 
+                        onClick={decrementResistance} 
+                        className={`text-red text-xs px-2 py-1 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        disabled={disabled}
+                    >-</button>
                     <Slider 
                         value={oxygenatorResistance} 
                         onChange={(e) => handleResistanceChange(e.value)} 
@@ -53,8 +98,13 @@ function OxygenatorSettings() {
                         max={200}
                         step={0.5}
                         className="w-full mx-2"
+                        disabled={disabled}
                     />
-                    <button onClick={incrementResistance} className="text-red text-xs px-2 py-1 rounded">+</button>
+                    <button 
+                        onClick={incrementResistance} 
+                        className={`text-red text-xs px-2 py-1 rounded ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        disabled={disabled}
+                    >+</button>
                 </div>
             </div>
         </div>
@@ -62,82 +112,3 @@ function OxygenatorSettings() {
 }
 
 export default OxygenatorSettings;
-
-
-// import React from 'react';
-// import { Slider } from 'primereact/slider';
-// import { useScenarioData } from '../../Contexts/ScenarioDataContext';
-
-// function OxygenatorSettings({ isSimulation, diffusion, setDiffusion, oxygenatorResistance, setResistance }) {
-//     const { sessionData, updateSessionData } = useScenarioData();
-
-//     // For simulations, get values from sessionData
-//     const currentDiffusion = isSimulation ? sessionData?.diffusion : diffusion;
-//     const currentResistance = isSimulation ? sessionData?.oxygenatorResistance : oxygenatorResistance;
-
-//     const handleDiffusionChange = (newValue) => {
-//         const updatedValue = Math.min(0.01000, Math.max(0.00010, parseFloat(newValue.toFixed(5))));
-//         if (isSimulation) {
-//             updateSessionData('diffusion', updatedValue);  // Simulation: Backend update
-//         } else {
-//             setDiffusion(updatedValue);  // Scenario: Local state update
-//         }
-//     };
-
-//     const handleResistanceChange = (newValue) => {
-//         const updatedValue = Math.min(200, Math.max(0, parseFloat(newValue.toFixed(1))));
-//         if (isSimulation) {
-//             updateSessionData('oxygenatorResistance', updatedValue);  // Simulation: Backend update
-//         } else {
-//             setResistance(updatedValue);  // Scenario: Local state update
-//         }
-//     };
-//     const incrementDiffusion = () => handleDiffusionChange(currentDiffusion + 0.00001);
-//     const decrementDiffusion = () => handleDiffusionChange(currentDiffusion - 0.00001);
-//     const incrementResistance = () => handleResistanceChange(currentResistance + 0.5);
-//     const decrementResistance = () => handleResistanceChange(currentResistance - 0.5);
-
-//     return (
-//         <div className="bg-white p-2 rounded-lg shadow-md w-48">
-//             <h3 className="text-dark-grey text-sm font-bold mb-2 text-center">Oxygenator Settings</h3>
-//             <div className="mb-4">
-//                 <div className="flex justify-between items-center mb-1">
-//                     <span className="text-dark-grey text-xs">Diffusion:</span>
-//                     <span className="text-dark-grey text-xs">{currentDiffusion.toFixed(5)}</span>
-//                 </div>
-//                 <div className="flex items-center">
-//                     <button onClick={decrementDiffusion} className="text-dark-grey text-xs px-2 py-1 bg-white rounded">-</button>
-//                     <Slider 
-//                         value={currentDiffusion} 
-//                         onChange={(e) => handleDiffusionChange(e.value)} 
-//                         min={0.00010}
-//                         max={0.01000}
-//                         step={0.00001}
-//                         className="w-full mx-2"
-//                     />
-//                     <button onClick={incrementDiffusion} className="text-dark-grey text-xs px-2 py-1 bg-white rounded">+</button>
-//                 </div>
-//             </div>
-//             <div>
-//                 <div className="flex justify-between items-center mb-1">
-//                     <span className="text-dark-grey text-xs">Oxygenator Resistance:</span>
-//                     <span className="text-dark-grey text-xs">{currentResistance.toFixed(1)}</span>
-//                 </div>
-//                 <div className="flex items-center">
-//                     <button onClick={decrementResistance} className="text-dark-grey text-xs px-2 py-1 bg-white rounded">-</button>
-//                     <Slider 
-//                         value={currentResistance} 
-//                         onChange={(e) => handleResistanceChange(e.value)} 
-//                         min={0}
-//                         max={200}
-//                         step={0.5}
-//                         className="w-full mx-2"
-//                     />
-//                     <button onClick={incrementResistance} className="text-dark-grey text-xs px-2 py-1 bg-white rounded">+</button>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
-
-// export default OxygenatorSettings;
